@@ -60,7 +60,7 @@ export async function main(denops: Denops): Promise<void> {
           scopeName,
           lines,
         );
-        const spcRule = userRule[scopeName] || {};
+        const spcRule = userRule[scopeName] || userRule['default'] || {};
         const highlight = new Highlight(bufnr, spcRule);
         if (start >= 0) {
           if (refresh) {
